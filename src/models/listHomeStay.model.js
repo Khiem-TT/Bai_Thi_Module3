@@ -12,6 +12,10 @@ class ListHomeStayModel extends BaseModel {
         let sql = `INSERT INTO homestayInfo(name, city, bedRoom, price, bathRoom, description) values('${name}', '${city}', ${bedRoom}, ${price}, ${bathRoom}, '${description}');`;
         await this.querySql(sql);
     }
+    async deleteHomestay(id) {
+        let sql = `DELETE FROM homestayInfo where id = ${+id};`;
+        await this.querySql(sql);
+    }
 }
 
 module.exports = new ListHomeStayModel();

@@ -25,6 +25,11 @@ const app = http.createServer((req, res) => {
                 console.log(err);
             })
             break;
+        case '/delete':
+            ListHomeStayController.deleteHomestay(req, res).catch(err => {
+                console.log(err);
+            })
+            break;
     }
 })
 

@@ -14,7 +14,7 @@ class ListHomeStayController extends BaseController{
             newHtml += `<td>${homestay.city}</td>`;
             newHtml += `<td>${homestay.price.toLocaleString()} VNĐ</td>`;
             newHtml += `<td><button type="submit">Sửa</button></td>`;
-            newHtml += `<td><button type="submit">Xoá</button></td>`;
+            newHtml += `<td><button type="submit"><a href="/delete?id=${homestay.id}">Xoá</a></button></td>`;
             newHtml += "<tr>";
         })
 
@@ -52,7 +52,6 @@ class ListHomeStayController extends BaseController{
             res.write(html);
             res.end();
         } else {
-            let html = await this.getTemplate('./src/views/AddHomestay.html');
             let data = '';
             req.on('data', chunk => {
                 data += chunk;
@@ -65,7 +64,7 @@ class ListHomeStayController extends BaseController{
                 let bathRoom = data.bathRoom;
                 let price = data.price;
                 let description = data.description;
-                ListHomeStayModel.addHomestay(name, city, bedRoom, bathRoom, price, description).catch(err => {
+                ListHomeStayModel.addHomestay(name, city, bedRoom, price, bathRoom, description).catch(err => {
                     console.log(err);
                 });
                 res.writeHead(301, {location: '/'});
@@ -75,6 +74,14 @@ class ListHomeStayController extends BaseController{
                 console.log('error');
             });
         }
+    }
+    async deleteHomestay(req, res) {
+        let id = qs.parse(url.parse(req.url).query).id;
+        await ListHomeStayModel.deleteHomestay(id).catch(err => {
+            console.log(err);
+        });
+        res.writeHead(301, {location: '/'});
+        res.end();
     }
 }
 

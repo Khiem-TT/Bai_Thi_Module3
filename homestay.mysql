@@ -1,0 +1,21 @@
+create database homestay;
+use homestay;
+create table homestayInfo(
+id int auto_increment primary key,
+name varchar(50),
+city varchar(50),
+bedRoom int,
+price int,
+bathRoom int,
+description varchar(255)
+);
+insert into homestayInfo(name, city, bedRoom, price, bathRoom, description) values('Langmandi', 'Hanoi', 2, 500000, 2, 'romantic');
+insert into homestayInfo(name, city, bedRoom, price, bathRoom, description) values('Hoàng tử', 'Hochiminh', 2, 1000000, 2, 'romantic');
+insert into homestayInfo(name, city, bedRoom, price, bathRoom, description) values('King', 'Camau', 2, 200000, 2, 'romantic');
+insert into homestayInfo(name, city, bedRoom, price, bathRoom, description) values('Ahihi', 'Cantho', 2, 500000, 2, 'romantic');
+insert into homestayInfo(name, city, bedRoom, price, bathRoom, description) values('KhaKha', 'Haiphong', 2, 200000, 2, 'romantic');
+insert into homestayInfo(name, city, bedRoom, price, bathRoom, description) values('MatQuaDi', 'Danang', 2, 1000000, 2, 'romantic');
+insert into homestayInfo(name, city, bedRoom, price, bathRoom, description) values('PhaQue', 'Dalat', 2, 500000, 2, 'romantic');
+insert into homestayInfo(name, city, bedRoom, price, bathRoom, description) values('Queen', 'Vungtau', 2, 500000, 2, 'romantic');
+insert into homestayInfo(name, city, bedRoom, price, bathRoom, description) values('Didaucungduoc', 'Nhatrang', 2, 200000, 2, 'romantic');
+insert into homestayInfo(name, city, bedRoom, price, bathRoom, description) values('Anhdiiaphat', 'Hue', 2, 200000, 2, 'romantic');
