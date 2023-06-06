@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Homestay</title>
+</head>
+<body>
+<h1>Thêm Homestay</h1>
+<form action="/addhomestay" method="post">
+    <table>
+        <tr>
+            <td>Tên:</td>
+            <td><input type="text" name="name"></td>
+        </tr>
+        <tr>
+            <td>Thành phố:</td>
+            <td><select name="city" id="">
+                <option value="" selected>Chọn tỉnh thành</option>
+                <option value="Hanoi">Hanoi</option>
+                <option value="Hochiminh">Hochiminh</option>
+                <option value="Danang">Danang</option>
+            </select></td>
+        </tr>
+        <tr>
+            <td>Số phòng ngủ:</td>
+            <td><input type="number" name="bedRoom"></td>
+        </tr>
+        <tr>
+            <td>Số phòng vệ sinh:</td>
+            <td><input type="number" name="bathRoom"></td>
+        </tr>
+        <tr>
+            <td>Giá:</td>
+            <td><input type="number" name="price"></td>
+        </tr>
+        <tr>
+            <td>Mô tả:</td>
+            <td><textarea name="description" cols="30" rows="10"></textarea></td>
+        </tr>
+        <tr>
+            <td>
+                <button type="submit">Thêm</button>
+            </td>
+            <td>
+                <button type="submit">Thoát</button>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
